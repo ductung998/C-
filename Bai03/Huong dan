@@ -1,0 +1,95 @@
+Bài 3:
+3.2: Tính chu vi và diện tích hình chữ nhật (Bài về nhà)
+ private void btnTinh_Click(object sender, EventArgs e)
+ {
+ double chieuDai, chieuRong, dienTich, chuVi;
+ chieuDai = double.Parse(txtChieuDai.Text);
+ chieuRong = double.Parse(txtChieuRong.Text);
+ chuVi = (chieuDai + chieuRong) * 2;
+ dienTich = chieuRong * chieuRong;
+ txtChuVi.Text = chuVi.ToString();
+ txtDienTich.Text = dienTich.ToString();
+ }
+ private void btnLamLai_Click(object sender, EventArgs e)
+ {
+ txtChieuDai.Text = "";
+ txtChieuRong.Text = "";
+ txtDienTich.Text = "";
+ txtChuVi.Text = "";
+ }
+3.3. Tính chu vi và diện tích tam giác
+ private void btnTruongHop1_Click(object sender, EventArgs e)
+ {
+ double a, b, c, p, chuVi, dienTich;
+ a = double.Parse(txtCanhA.Text);
+ b = double.Parse(txtCanhB.Text);
+ c = double.Parse(txtCanhC.Text);
+ p = (a + b + c) / 2;
+ chuVi = p * 2;
+ dienTich = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+ txtChuVi.Text = Math.Round(chuVi,2).ToString();
+ txtDienTich.Text = Math.Round(dienTich,2).ToString();
+ }
+ private void btnLamLai_Click(object sender, EventArgs e)
+ {
+ txtCanhA.Text = "";
+ txtCanhB.Text = "";
+ txtCanhC.Text = "";
+ txtChuVi.Text = "";
+ txtDienTich.Text = "";
+ }
+ private void btnTruongHop2_Click(object sender, EventArgs e)
+ {
+ int a, b, c;
+ double p, chuVi, dienTich;
+ a = int.Parse(txtCanhA.Text);
+ b = int.Parse(txtCanhB.Text);
+ c = int.Parse(txtCanhC.Text);
+ p = (a + b + c) / 2.0;
+ chuVi = p * 2;
+ dienTich = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+ txtChuVi.Text = chuVi.ToString();
+ txtDienTich.Text = dienTich.ToString();
+ }
+ private void btnTruongHop3_Click(object sender, EventArgs e)
+ {
+ int a, b, c;
+ float p, chuVi, dienTich;
+ a = int.Parse(txtCanhA.Text);
+ b = int.Parse(txtCanhB.Text);
+ c = int.Parse(txtCanhC.Text);
+
+ p = (float)(a + b + c) / 2;
+ chuVi = p * 2;
+ dienTich = (float)Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+ txtChuVi.Text = chuVi.ToString();
+ txtDienTich.Text = dienTich.ToString();
+ }
+3.4. Tính số nút của 1 số nguyên (Bài về nhà)
+private void btnTinh_Click(object sender, EventArgs e)
+ {
+ int n, n1, n2, n3, n4;
+ n = int.Parse(txtSoNguyenN.Text);
+ n1 = n / 1000;
+ n2 = n % 1000 / 100;
+ n3 = n % 100 / 10;
+ n4 = n % 10;
+ int ket_qua = (n1 + n2 + n3 + n4) % 10;
+ txtSoNut.Text = ket_qua.ToString();
+ }
+3.5. Tách chuỗi họ
+ private void btnTachChuoi_Click(object sender, EventArgs e)
+ {
+ string hoTen, ho, ten, lot;
+ int vtDau, vtCuoi;
+ hoTen = txtHoTen.Text.Trim();
+ vtDau = hoTen.IndexOf(" ");
+ vtCuoi = hoTen.LastIndexOf(" ");
+ ho = hoTen.Substring(0, vtDau);
+ ten = hoTen.Substring(vtCuoi);
+ lot = hoTen.Substring(vtDau,vtCuoi - vtDau);
+ txtHo.Text = ho.Trim();
+ txtLot.Text = lot.Trim();
+ txtTen.Text = ten.Trim();
+ }
